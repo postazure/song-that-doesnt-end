@@ -1,4 +1,37 @@
 <div class="starter-template">
-  <h1>Nothing here yet...</h1>
-  <p class="lead">Better get crackin'!!</p>
+
+  <% if current_page?(:action => 'index') %>
+    <p>
+      This is the song that doesnt end
+    </p>
+    <%= image_tag "lambchop1.jpg" , size: "200" %>
+    <br>
+    <%= link_to "Next >>", verse_2_path %>
+
+  <% elsif current_page?(:action => 'verse_2') %>
+    <p>
+      It just goes on and on my friends
+    </p>
+    <%= image_tag "mqdefault.jpg", size: "200" %>
+    <br>
+    <%= link_to "Next >>", verse_3_path %>
+
+  <% elsif current_page?(:action => 'verse_3') %>
+    <p>
+      Some people, started singing it not knowing what it was
+    </p>
+    <%= image_tag "person_with_puppets.jpg", size: "200"%>
+    <br>
+    <%= link_to "Next >>", verse_4_path %>
+
+  <% elsif current_page?(:action => 'verse_4') %>
+    <p>
+      And they'll just continue singing it forever just because...
+    </p>
+    <%= image_tag "cover.jpg", size: "200" %>
+    <br>
+    <%= link_to "Next >>", home_path %>
+
+  <% end %>
+
 </div>
